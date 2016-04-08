@@ -8,7 +8,6 @@ SOURCES=$(wildcard *.cpp)
 OBJS=$(patsubst %.cpp,%.o,$(SOURCES))
 DYLIBNAMES=$(patsubst %.cpp,%.$(DYLIBSUFFIX),$(SOURCES))
 
-
 # Fallback to gcc when $CC is not in $PATH.
 CXX:=g++
 OPTIMIZATION?=-O2 -DNDEBUG
@@ -16,20 +15,17 @@ WARNINGS=-Wall
 CXXFLAGS=-I../src
 REAL_CXXFLAGS=$(OPTIMIZATION) -fPIC $(CXXFLAGS) $(WARNINGS) $(DEBUG) $(PROF)
 
-
 all: $(DYLIBNAMES) 
 
 #$(DYLIBNAMES): $(OBJS)
 %.so:%.o
 	$(CXX) -shared -Wl,-soname,$@.$(DYLIBMINORSUFFIX) $(LDFLAGS) $< -o $@ 
 
-
 .cpp.o:
 	$(CXX)  -c $(REAL_CXXFLAGS) $<
 
 clean:
 	rm -rf $(DYLIBNAMES) $(OBJS)
-
 
 # Installation related variables and target
 PREFIX:=/etc/spiderq

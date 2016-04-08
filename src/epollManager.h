@@ -4,7 +4,7 @@ class EpollManager
 {
 public:
 	EpollManager(int num);   //构造函数 初始化Epoll，得到句柄
-	~EpollManager();  //释放句柄
+	~EpollManager();
 
 	//注册socket句柄
 	int registHandle(int handle);

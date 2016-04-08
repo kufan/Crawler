@@ -39,7 +39,6 @@ extern Config *g_conf;
     } \
 } while(0)
 
-
 extern int attach_epoll_task();
 
 #endif

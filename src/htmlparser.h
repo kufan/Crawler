@@ -10,9 +10,6 @@ public:
 
 	//公共接口
 	list<string> getUrls(string page);
+
 private:
-
-
 }
-
-

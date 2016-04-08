@@ -31,10 +31,10 @@ public:
 	~ModuleManager();
 
 	int load(string path, string name );   //从编译好的模块动态载入
-	MODULE *getModule(string); //从模块列表中找到需要的模块
+	MODULE *getModule(string);             //从模块列表中找到需要的模块
 
 private:
-	map<string, MODULE*> m_modules;    //模块管理结构
+	map<string, MODULE*> m_modules;        //模块管理结构
 };
 
 struct htmlParserParam
