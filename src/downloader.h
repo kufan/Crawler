@@ -20,10 +20,6 @@ public:
 private:
 	Socket m_sock;
 
-	//http协议处理模块
 	Http m_httpPaser;
-	URL * mp_url;
+	URL *mp_url;
 };
-
-
-
