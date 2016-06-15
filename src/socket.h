@@ -14,8 +14,6 @@ public:
 	void* getData();
 
 private:
-
-private:
 	int m_socketHandle;
 	char* buf;
 };
